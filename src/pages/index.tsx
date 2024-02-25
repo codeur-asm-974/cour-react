@@ -5,9 +5,27 @@ export default function Home() {
   return (
     <>
       <Seo title="cours react" description="description.." />
-      <Typography variant="h1" component="h1" className="">
-        Monaco 974 debrief
-      </Typography>
+
+      <div className="space-y-5">
+        <Typography theme="primary" variant="display" component="div">
+          Monaco 974 debrief
+        </Typography>
+        <Typography theme="gray" variant="h3" component="div">
+          Monaco 974 debrief
+        </Typography>
+        <Typography theme="secondary" variant="h2" component="div">
+          Monaco 974 debrief
+        </Typography>
+        <Typography theme="secondary" variant="body-sm" component="div">
+          Monaco 974 debrief
+        </Typography>
+        <Typography variant="caption4" component="div">
+          Monaco 974 debrief
+        </Typography>
+        <Typography variant="caption4" weight="medium" component="div">
+          Monaco 974 debrief
+        </Typography>
+      </div>
     </>
   );
 }
