@@ -1,24 +1,54 @@
 import { Seo } from "@/ui/components/seo";
 import { Typography } from "@/ui/desin-system/typography/typography";
 import { Button } from "@/ui/desin-system/button/button";
+import { Ri4KFill } from "react-icons/ri";
+
 export default function Home() {
   return (
     <>
       <Seo title="cour-react" description="Description..."></Seo>
 
       <div className="flex items-center gap-4 p-10">
-        <Button size="small" variant="accent">
+        <Button
+          size="small"
+          icon={{ icon: Ri4KFill }}
+          iconPosition="right"
+          variant="accent"
+        >
           Button
+        </Button>
+        <Button
+          size="medium"
+          icon={{ icon: Ri4KFill }}
+          iconPosition="left"
+          variant="accent"
+        >
+          patou
         </Button>
         <Button size="medium" variant="secondary">
           bonjour
         </Button>
-        <Button size="large" variant="outline">
+        <Button size="medium" variant="outline">
           Celia
         </Button>
-        <Button size="medium" variant="disabled">
-          Patou
-        </Button>
+        <Button
+          size="small"
+          variant="ico"
+          icon={{ icon: Ri4KFill }}
+          iconTheme="secondary"
+        />
+        <Button
+          size="small"
+          variant="ico"
+          icon={{ icon: Ri4KFill }}
+          iconTheme="gray"
+        />
+        <Button
+          size="small"
+          variant="ico"
+          icon={{ icon: Ri4KFill }}
+          iconTheme="accent"
+        />
       </div>
 
       <div className="space-y-5">
