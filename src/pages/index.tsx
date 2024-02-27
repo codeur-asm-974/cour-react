@@ -2,11 +2,15 @@ import { Seo } from "@/ui/components/seo";
 import { Typography } from "@/ui/desin-system/typography/typography";
 import { Button } from "@/ui/desin-system/button/button";
 import { Ri4KFill } from "react-icons/ri";
+import { Spinner } from "@/ui/desin-system/spinner/spiner";
 
 export default function Home() {
   return (
     <>
       <Seo title="cour-react" description="Description..."></Seo>
+      <Spinner size="small" />
+      <Spinner />
+      <Spinner size="large" />
 
       <div className="flex items-center gap-4 p-10">
         <Button
@@ -18,6 +22,7 @@ export default function Home() {
           Button
         </Button>
         <Button
+          isLoading
           size="medium"
           icon={{ icon: Ri4KFill }}
           iconPosition="left"
