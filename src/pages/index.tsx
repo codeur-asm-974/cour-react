@@ -3,14 +3,19 @@ import { Typography } from "@/ui/desin-system/typography/typography";
 import { Button } from "@/ui/desin-system/button/button";
 import { Ri4KFill } from "react-icons/ri";
 import { Spinner } from "@/ui/desin-system/spinner/spiner";
+import { Logo } from "@/ui/desin-system/logo/logo";
+import { Avatar } from "@/ui/desin-system/avatar/avatar";
 
 export default function Home() {
   return (
     <>
       <Seo title="cour-react" description="Description..."></Seo>
-      <Spinner size="small" />
-      <Spinner />
-      <Spinner size="large" />
+
+      <div className="flex items-center gap-2 p-5 border-gray-400 rounded">
+        <Spinner size="small" />
+        <Spinner />
+        <Spinner size="large" />
+      </div>
 
       <div className="flex items-center gap-4 p-10">
         <Button
@@ -56,7 +61,10 @@ export default function Home() {
         />
       </div>
 
-      <div className="space-y-5">
+      <div
+        className=" space-y-4 gap-2 p-5
+      border border-gray-400 rounded"
+      >
         <Typography theme="primary" variant="display" component="div">
           Monaco 974 debrief
         </Typography>
@@ -75,6 +83,30 @@ export default function Home() {
         <Typography variant="caption4" weight="medium" component="div">
           Monaco 974 debrief
         </Typography>
+      </div>
+
+      <div className="flex items-center gap-2 p-5 border-gray-400 rounded">
+        <Logo size="very-small"></Logo>
+        <Logo size="small"></Logo>
+        <Logo size="large"></Logo>
+      </div>
+
+      <div className="flex items-center gap-2 p-5 border border-gray-500 rounded">
+        <Avatar
+          size="small"
+          src="/daniel-lincoln-pe-X2NUwVQo-unsplash1.png"
+          alt="Avatar de Daniel Lincoln"
+        />
+        <Avatar
+          src="src/assets/images/image/daniel-lincoln-pe-X2NUwVQo-unsplash1.png"
+          size="small"
+          alt="Avatar"
+        />
+        <Avatar
+          src="/assets/images/image/daniel-lincoln-pe-X2NUwVQo-unsplash1.png"
+          size="medium"
+          alt="Avatar"
+        />
       </div>
     </>
   );
