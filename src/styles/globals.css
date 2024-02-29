@@ -9,3 +9,11 @@
     font-family: inter, system-ui, sans-serif;
   }
 }
+a:hover {
+  @apply text-primary;
+}
+.animate,
+a,
+a:hover {
+  transition: all 0.2 ease-in-out;
+}
