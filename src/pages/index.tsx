@@ -1,13 +1,17 @@
-import { Navigation } from "@/ui/components/navigation/navigations";
 import { Seo } from "@/ui/components/seo/seo";
-import { Avatar } from "@/ui/desin-system/avatar/avatar";
-import { Footer } from "@/ui/components/navigation/footer";
+
+import { Layout } from "@/ui/components/layout/layout";
+
+import { LandingPageContainer } from "@/ui/modules/landing-page/components/landing-page.container";
+
 export default function Home() {
   return (
     <>
       <Seo title="cour-react" description="Description..."></Seo>
-      <Navigation />
-      <Footer />
+
+      <Layout>
+        <LandingPageContainer />
+      </Layout>
     </>
   );
 }

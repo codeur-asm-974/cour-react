@@ -56,9 +56,8 @@ export const Typography = ({
       variantStyles = "text-3xl";
       break;
     case "lead":
-      variantStyles = "text-2xl";
+      variantStyles = "text-3xl";
       break;
-
     case "body-lg":
       variantStyles = "text-lg";
       break;
@@ -100,9 +99,6 @@ export const Typography = ({
 
     case "secondary":
       colorStyles = "text-secondary";
-      break;
-
-    default:
       break;
   }
 
