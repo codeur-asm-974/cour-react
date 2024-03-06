@@ -1,13 +1,13 @@
 import { IconProps } from "@/types/iconProps";
 import clsx from "clsx";
-import { Console } from "console";
+
 import { Spinner } from "../spinner/spiner";
 import { LinkType, LinkTypes } from "@/lib/link-type";
 import Link from "next/link";
 
 interface Props {
   size?: "small" | "medium" | "large";
-  variant?: "accent" | "secondary" | "outline" | "disabled" | "ico";
+  variant?: "accent" | "secondary" | "outline" | "disabled" | "ico" | "success";
   icon?: IconProps;
   iconTheme?: "accent" | "secondary" | "gray";
   iconPosition?: "left" | "right";
@@ -54,6 +54,10 @@ export const Button = ({
     case "disabled":
       variantStyles =
         "bg-gray-400 border border- gray-500 text-gray-600 rounded cursor-not-allowed";
+
+      break;
+    case "success":
+      variantStyles = "bg-secondary hover:bg-secondary-400 text-white rounded";
 
       break;
     case "ico":

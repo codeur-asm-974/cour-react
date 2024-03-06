@@ -32,6 +32,7 @@ export const HeroTopView = () => {
       <Image
         src="/assets/svg/rocket.svg"
         alt="illustration d'une fusée "
+        priority
         width={811}
         height={596}
         className=" absolute top-0 right-0 z-0"
