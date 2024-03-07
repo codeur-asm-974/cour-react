@@ -1,7 +1,5 @@
 import { Seo } from "@/ui/components/seo/seo";
-
 import { Layout } from "@/ui/components/layout/layout";
-
 import { LandingPageContainer } from "@/ui/modules/landing-page/components/landing-page.container";
 
 export default function Home() {
@@ -9,7 +7,7 @@ export default function Home() {
     <>
       <Seo title="cour-react" description="Description..."></Seo>
 
-      <Layout>
+      <Layout isDisplayBreadcrumbs={false}>
         <LandingPageContainer />
       </Layout>
     </>
