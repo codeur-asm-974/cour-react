@@ -45,7 +45,7 @@ export const Breadcrumbs = () => {
       </Link>
     </div>
   ));
-  console.log("segments", segments);
+
   return (
     <Container className="flex items-center gap-2 mt-6 mb-6">{view}</Container>
   );

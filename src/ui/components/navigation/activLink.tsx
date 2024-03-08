@@ -10,8 +10,6 @@ interface Props {
 
 export const ActivLink = ({ href, children }: Props) => {
   const router = useRouter();
-  console.log("router::", router.pathname);
-  console.log("href", href);
 
   const isActive: boolean = useMemo(() => {
     return router.pathname === href;
