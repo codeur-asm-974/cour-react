@@ -18,7 +18,7 @@ export const UserAccountNavigation = () => {
     <Box className="flex flex-col p-8 m-4 gap-7">
       <div className="flex flex-col  gap-3">
         <Typography variant="caption2" weight="medium">
-          <ActivLink href="/mon-compte">Mon compte</ActivLink>
+          <ActivLink href="/mon-espace">Mon compte</ActivLink>
         </Typography>
         <Typography variant="caption2" weight="medium">
           <ActivLink href="/mon-compte/mes-projets">Mes projets</ActivLink>
