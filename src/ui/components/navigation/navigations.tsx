@@ -4,9 +4,13 @@ import { Typography } from "@/ui/desin-system/typography/typography";
 import { Button } from "@/ui/desin-system/button/button";
 import Link from "next/link";
 import { ActivLink } from "./activLink";
+import { useAuth } from "@/context/Auth-User-Context";
 interface Props {}
 
 export const Navigation = ({}: Props) => {
+  const { authUser, authUserIsLoading } = useAuth();
+  console.log("authUser", authUser);
+  console.log("authUserIsLoading", authUserIsLoading);
   return (
     <div className="border-b-2 border-gray-400">
       <Container className="flex items-center justify-between py-1.5 gap-7 ">
