@@ -6,11 +6,12 @@ export interface UserInterface {
   displayName: string | null;
   emailVerified: boolean;
   phoneNumber: string | null;
-  photoURL: string | null;
+  photoURL?: string | null;
   userDocument?: UserDocument;
 }
 
 export interface UserDocument {
+  onbordingIsCompleted: boolean;
   uid: string;
   email: string;
   how_did_her: string;

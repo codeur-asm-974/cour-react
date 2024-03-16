@@ -1,19 +1,23 @@
+import { SessionStatusTypes } from "@/types/Session-Status-Types";
 import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 import { Container } from "../container/container";
 import { Footer } from "../navigation/footer";
 import { Navigation } from "../navigation/navigations";
 import { UserAccountNavigation } from "../navigation/user-account-navigation";
+import { Session } from "../session/session";
 
 interface Props {
   children: React.ReactNode;
   isDisplayBreadcrumbs?: boolean;
   withSidebar?: boolean;
+  sessionStatus?: SessionStatusTypes;
 }
 
 export const Layout = ({
   children,
   isDisplayBreadcrumbs = true,
   withSidebar,
+  sessionStatus,
 }: Props) => {
   let view: React.ReactElement = <></>;
   if (withSidebar) {
@@ -31,11 +35,11 @@ export const Layout = ({
     view = <>{children}</>;
   }
   return (
-    <>
+    <Session sessionStatus={sessionStatus}>
       <Navigation />
       {isDisplayBreadcrumbs && <Breadcrumbs />}
       {view}
       <Footer />
-    </>
+    </Session>
   );
 };

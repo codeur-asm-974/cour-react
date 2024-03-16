@@ -5,12 +5,24 @@ import { Button } from "@/ui/desin-system/button/button";
 import Link from "next/link";
 import { ActivLink } from "./activLink";
 import { useAuth } from "@/context/Auth-User-Context";
+import { AccountAvatarNavigationLinks } from "./account-avatar-link";
 interface Props {}
 
 export const Navigation = ({}: Props) => {
-  const { authUser, authUserIsLoading } = useAuth();
+  const { authUser } = useAuth();
   console.log("authUser", authUser);
-  console.log("authUserIsLoading", authUserIsLoading);
+
+  const authentificationSystem = (
+    <div className="flex items-center gap-2">
+      <Button baseUrl="/connexion" size="small">
+        Connexion
+      </Button>
+      <Button baseUrl="/connexion/inscription" size="small" variant="secondary">
+        Rejoindre
+      </Button>
+    </div>
+  );
+
   return (
     <div className="border-b-2 border-gray-400">
       <Container className="flex items-center justify-between py-1.5 gap-7 ">
@@ -35,22 +47,15 @@ export const Navigation = ({}: Props) => {
             className="flex items-center gap-7"
           >
             <ActivLink href="/design-system">Design system</ActivLink>
-            <Link href="/projet">Projet</Link>
-            <Link href="/formation">Formation</Link>
-            <Link href="/contact">Contact</Link>
+            <ActivLink href="/projet">Projets</ActivLink>
+            <ActivLink href="/formation">Formations</ActivLink>
+            <ActivLink href="/contact">Contacts</ActivLink>
           </Typography>
-          <div className="flex items-center gap-2">
-            <Button baseUrl="/connexion" size="small">
-              Connexion
-            </Button>
-            <Button
-              baseUrl="/connexion/inscription"
-              size="small"
-              variant="secondary"
-            >
-              Rejoindre
-            </Button>
-          </div>
+          {!authUser ? (
+            authentificationSystem
+          ) : (
+            <AccountAvatarNavigationLinks />
+          )}
         </div>
       </Container>
     </div>

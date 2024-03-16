@@ -1,4 +1,4 @@
-import { firebaseLogoutUser } from "@/api/authentification";
+import { firebaseLogOutUser } from "@/api/authentification";
 import { Box } from "@/ui/desin-system/box/box";
 import { Button } from "@/ui/desin-system/button/button";
 import { Typography } from "@/ui/desin-system/typography/typography";
@@ -6,8 +6,8 @@ import { toast } from "react-toastify";
 import { ActivLink } from "./activLink";
 
 export const UserAccountNavigation = () => {
-  const handleLogoutUser = async () => {
-    const { error } = await firebaseLogoutUser();
+  const handleLogOutUser = async () => {
+    const { error } = await firebaseLogOutUser();
     if (error) {
       toast.error(error.message);
       return;
@@ -25,7 +25,7 @@ export const UserAccountNavigation = () => {
         </Typography>
       </div>
 
-      <Button action={handleLogoutUser} variant="danger">
+      <Button action={handleLogOutUser} variant="danger">
         Déconexion
       </Button>
     </Box>
