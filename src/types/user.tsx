@@ -16,4 +16,7 @@ export interface UserDocument {
   email: string;
   how_did_her: string;
   creation_date: Timestamp;
+  displayName: string;
+  expertise: string;
+  biography: string;
 }

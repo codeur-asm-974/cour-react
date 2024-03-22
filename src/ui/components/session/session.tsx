@@ -11,7 +11,6 @@ interface Props {
 export const Session = ({ children, sessionStatus }: Props) => {
   const router = useRouter();
   const { authUser, authUserIsLoading } = useAuth();
-  console.log("authUser", authUser);
 
   const onbordingIsCompleted = authUser?.userDocument?.onbordingIsCompleted;
 
