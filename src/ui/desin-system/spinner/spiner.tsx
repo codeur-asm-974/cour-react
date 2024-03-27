@@ -3,9 +3,14 @@ import clsx from "clsx";
 interface Props {
   size?: "small" | "medium" | "large";
   variant?: "primary" | "white";
+  className?: string;
 }
 
-export const Spinner = ({ size = "medium", variant = "primary" }: Props) => {
+export const Spinner = ({
+  size = "medium",
+  variant = "primary",
+  className,
+}: Props) => {
   let variantStyles: string = "text-primary",
     sizeStyles: string = "medium";
 
@@ -37,7 +42,7 @@ export const Spinner = ({ size = "medium", variant = "primary" }: Props) => {
   return (
     <svg
       role="spinner"
-      className={clsx(sizeStyles, variantStyles, "animate-spin")}
+      className={clsx(sizeStyles, variantStyles, "animate-spin", className)}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

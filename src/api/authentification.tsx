@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { auth } from "@/config/firebase-config";
 import { FirebaseError } from "firebase/app";
+import { getFireBaseErrorMessage } from "@/utils/getFireBaseErrorMessage";
 
 export const firebaseCreateUser = async (email: string, password: string) => {
   try {
@@ -18,11 +19,15 @@ export const firebaseCreateUser = async (email: string, password: string) => {
     return { data: userCredential.user };
   } catch (error) {
     const firebaseError = error as FirebaseError;
-    // format error
+    const errorMessage = getFireBaseErrorMessage(
+      "createUserWithEmailAndPassword",
+
+      firebaseError.code
+    );
     return {
       error: {
         code: firebaseError.code,
-        message: firebaseError.message,
+        message: errorMessage,
       },
     };
   }
@@ -37,11 +42,14 @@ export const firebaseSingninUser = async (email: string, password: string) => {
     return { data: userCredential.user };
   } catch (error) {
     const firebaseError = error as FirebaseError;
-    // format error
+    const errorMessage = getFireBaseErrorMessage(
+      "signInWithEmailAndPassword",
+      firebaseError.code
+    );
     return {
       error: {
         code: firebaseError.code,
-        message: firebaseError.message,
+        message: errorMessage,
       },
     };
   }
@@ -52,11 +60,11 @@ export const firebaseLogOutUser = async () => {
     return { data: true };
   } catch (error) {
     const firebaseError = error as FirebaseError;
-    // format error
+    const errorMessage = getFireBaseErrorMessage("signOut", firebaseError.code);
     return {
       error: {
         code: firebaseError.code,
-        message: firebaseError.message,
+        message: errorMessage,
       },
     };
   }
@@ -67,11 +75,14 @@ export const sendEmailToResetPassword = async (email: string) => {
     return { data: true };
   } catch (error) {
     const firebaseError = error as FirebaseError;
-    // format error
+    const errorMessage = getFireBaseErrorMessage(
+      "sendPasswordResetEmail",
+      firebaseError.code
+    );
     return {
       error: {
         code: firebaseError.code,
-        message: firebaseError.message,
+        message: errorMessage,
       },
     };
   }
@@ -83,11 +94,14 @@ export const sendEmailVerificationProcedure = async () => {
       return { data: true };
     } catch (error) {
       const firebaseError = error as FirebaseError;
-      // format error
+      const errorMessage = getFireBaseErrorMessage(
+        "sendEmailVerification",
+        firebaseError.code
+      );
       return {
         error: {
           code: firebaseError.code,
-          message: firebaseError.message,
+          message: errorMessage,
         },
       };
     }

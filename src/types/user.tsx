@@ -6,7 +6,7 @@ export interface UserInterface {
   displayName: string | null;
   emailVerified: boolean;
   phoneNumber: string | null;
-  photoURL?: string | null;
+  photoURL: string | null;
   userDocument?: UserDocument;
 }
 
@@ -19,4 +19,5 @@ export interface UserDocument {
   displayName: string;
   expertise: string;
   biography: string;
+  photoURL: string | null;
 }

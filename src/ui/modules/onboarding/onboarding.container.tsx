@@ -3,6 +3,7 @@ import { OnboardingView } from "./onboarding.View";
 import { WelcomeStep } from "./components/steps/welcome-step/welcome-step";
 import { onboardingStepsListInterface } from "@/types/onboarding-steps-list";
 import { ProfileStep } from "./components/steps/profile-step/profile-step";
+import { AvatarStep } from "./components/steps/avatar-step/avatar-step";
 
 export const OnboardingContainer = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -10,7 +11,8 @@ export const OnboardingContainer = () => {
   const stepsList: onboardingStepsListInterface[] = [
     { id: 1, label: "Bienvenue", component: { step: WelcomeStep } },
     { id: 2, label: "Profile", component: { step: ProfileStep } },
-    { id: 3, label: "Avatar", component: { step: WelcomeStep } },
+    { id: 3, label: "Avatar", component: { step: AvatarStep } },
+    { id: 4, label: "last step", component: { step: WelcomeStep } },
   ];
   const getCurrentStep = () => {
     return stepsList.find((el) => el.id === currentStep);

@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { clsx } from "clsx";
+import { Spinner } from "../spinner/spiner";
 
 interface props {
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large" | "extra-large";
   src: string;
   alt: string;
+  isLoading?: boolean;
 }
 
-export const Avatar = ({ size = "medium", src, alt }: props) => {
-  let sizeStyles: string;
+export const Avatar = ({ size = "medium", src, alt, isLoading }: props) => {
+  let sizeStyles: string = "";
   switch (size) {
     case "small":
       sizeStyles = "w-[24px] h-[24px]";
@@ -20,6 +22,9 @@ export const Avatar = ({ size = "medium", src, alt }: props) => {
       break;
     case "large":
       sizeStyles = "w-[50px] h-[50px]";
+      break;
+    case "extra-large":
+      sizeStyles = "w-[130px] h-[130px]";
 
       break;
 
@@ -27,13 +32,29 @@ export const Avatar = ({ size = "medium", src, alt }: props) => {
   }
 
   return (
-    <div className={clsx(sizeStyles, "bg-gray-500 rounded-full relative")}>
+    <div
+      className={clsx(
+        sizeStyles,
+        isLoading && "flex items-center justify-center",
+        "relative bg-gray-300 rounded-full overflow-hidden"
+      )}
+    >
+      <div
+        className={clsx(
+          isLoading ? "opacity-40" : "opacity-0",
+          "absolute z-10 w-full bg-white animate"
+        )}
+      />
       <Image
         fill
         src={src ? src : "/assets/svg/paresseux.svg"}
         alt={alt}
-        className="rounded-full"
+        className={clsx(
+          isLoading && "blur-[2px]",
+          "object-cover object-center rounded-full animate"
+        )}
       />
+      {isLoading && <Spinner className="relative" z-20 />}
     </div>
   );
 };
